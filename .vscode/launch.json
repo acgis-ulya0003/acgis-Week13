@@ -5,6 +5,8 @@
   "version": "0.2.0",
   "configurations": [
   
+  
+  
     {
       "name": "Python: Current File",
       "type": "python",
@@ -20,6 +22,15 @@
       "console": "integratedTerminal",
       "args": ["E:\\Documents\\acgis\\data\\Canada\\CanadaTest.txt", 
                "E:\\Documents\\acgis\\data\\Canada\\Test.shp"]
+    },
+    {
+      "name": "Test with args - big file",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": ["E:\\Documents\\acgis\\data\\Canada\\canada.txt", 
+               "E:\\Documents\\acgis\\data\\Canada\\Canada_lines.shp"]
     }
   ]
 }

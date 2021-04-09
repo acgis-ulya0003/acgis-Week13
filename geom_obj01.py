@@ -1,5 +1,6 @@
 import os
 import sys
+from time import perf_counter
 
 def main():
     if len(sys.argv) != 3:
@@ -7,6 +8,8 @@ def main():
         sys.exit(0)
 
 import arcpy
+
+t1_start = perf_counter()
 
 sf = sys.argv[2]
 path = os.path.dirname(sf)
@@ -44,47 +47,20 @@ with open(sys.argv[1], mode = 'r') as in_file, \
 
             cursor.insertRow([polyline])
             point_list = []
-    
-    #point_list = []
-    #coords_list = []
-    
-
-    
-        #print(row)
-
-        #if len(row.split(' ')) == 1:
-            #lineID = row
-        #else:
-            #current_row = []
-            #current_row.append[lineID]
-            #longitude, latitude = current_row.split(' ')
-            #for i in current_row.split(' '):
-                #current_row.append(i)
-            #$coords_list.append(current_row)
         
-        #if len(row.split(' ')) > 1:
-            
-            #point_list.append(row)
-            #print(row)
-        
-        #else:
-            #print(row)
-            #print(point_list)
-            #if lineID == None:
-                
-                # lineID = row
+    array = arcpy.Array(point_list)
+    spatial_reference = arcpy.SpatialReference(4269)
+    polyline = arcpy.Polyline(array, spatial_reference)
 
-            #else:
-                #lines[lineID] = point_list
-                #lineID = row
-                #point_list = []
+    cursor.insertRow([polyline])
+    point_list = []
+
+t2_stop = perf_counter()
+print('\n')
+print('Elapsed time: ' + str(t2_stop - t1_start ))
+print('\n')
     
-    #lines
-            
-#print(coords_list)
-
-
-                
+                    
             
 
 if __name__ == '__main__':
