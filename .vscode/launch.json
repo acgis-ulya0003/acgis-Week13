@@ -24,6 +24,15 @@
                "E:\\Documents\\acgis\\data\\Canada\\Test.shp"]
     },
     {
+      "name": "Test with args wkt",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": ["E:\\Documents\\acgis\\data\\Canada\\CanadaTest.txt", 
+               "E:\\Documents\\acgis\\data\\Canada\\Test_wkt.shp"]
+    },
+    {
       "name": "Test with args - big file",
       "type": "python",
       "request": "launch",
@@ -31,6 +40,15 @@
       "console": "integratedTerminal",
       "args": ["E:\\Documents\\acgis\\data\\Canada\\canada.txt", 
                "E:\\Documents\\acgis\\data\\Canada\\Canada_lines.shp"]
+    },
+    {
+      "name": "Test with args - big file - wkt",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": ["E:\\Documents\\acgis\\data\\Canada\\canada.txt", 
+               "E:\\Documents\\acgis\\data\\Canada\\Canada_lines_wkt.shp"]
     }
   ]
 }
